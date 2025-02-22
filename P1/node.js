@@ -13,7 +13,7 @@ async function weatherFn(cName) {
         const res = await fetch(temp);
         const data = await res.json();
         if (res.ok) {
-            weatherFn(data);
+            weatherShowFn(data);
         } else {
             alert('stad hittades inte. försök igen');
         }
