@@ -5,7 +5,8 @@ const apiKey =
 	'f00c38e0279b7bc85480c3fe775d518c';
 
 $(document).ready(function (){
-weatherFn('Pune')});
+weatherFn('Pune');
+});
 //för att hämta data från väder api
 async function weatherFn(cName) {
     const temp = `${url}?q=${cName}&appid=${apiKey}&units=metric`;
@@ -13,7 +14,7 @@ async function weatherFn(cName) {
         const res = await fetch(temp);
         const data = await res.json();
         if (res.ok) {
-            weatherFn(data);
+            weatherShowFn(data);
         } else {
             alert('stad hittades inte. försök igen');
         }
